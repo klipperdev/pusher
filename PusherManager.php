@@ -149,7 +149,7 @@ class PusherManager implements PusherManagerInterface
             }
 
             if ($pipeline instanceof RequiredUserPipelineInterface) {
-                $context->setUsername($pipeline->getUsername());
+                $context->setUserIdentifier($pipeline->getUsername());
             }
 
             if ($pipeline instanceof RequiredOrganizationPipelineInterface) {

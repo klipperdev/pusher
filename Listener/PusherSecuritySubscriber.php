@@ -62,21 +62,21 @@ class PusherSecuritySubscriber implements EventSubscriberInterface
 
     public function onPrePush(PrePushEvent $event): void
     {
-        $username = $event->getContext()->getUsername();
+        $userIdentifier = $event->getContext()->getUserIdentifier();
         $organization = $event->getContext()->getOrganizationName();
 
-        if (empty($username) && empty($organization)) {
+        if (empty($userIdentifier) && empty($organization)) {
             return;
         }
 
-        if (empty($username) && !empty($organization)) {
+        if (empty($userIdentifier) && !empty($organization)) {
             throw new InvalidArgumentException(
-                'The username is required if the organization name is defined'
+                'The user identifier is required if the organization name is defined'
             );
         }
 
-        if (!empty($username)) {
-            $this->authUser($username);
+        if (!empty($userIdentifier)) {
+            $this->authUser($userIdentifier);
         }
 
         if (null !== $this->orgContext && null !== $this->orgContextHelper) {

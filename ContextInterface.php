@@ -20,6 +20,10 @@ interface ContextInterface
 
     public function getUsername(): ?string;
 
+    public function setUserIdentifier(?string $userIdentifier): void;
+
+    public function getUserIdentifier(): ?string;
+
     public function setOrganizationName(?string $organizationName): void;
 
     public function getOrganizationName(): ?string;

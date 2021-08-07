@@ -16,30 +16,40 @@ namespace Klipper\Component\Pusher;
  */
 class Context implements ContextInterface
 {
-    private ?string $username;
+    private ?string $userIdentifier;
 
     private ?string $organizationName;
 
     private ?\DateTimeInterface $startAt;
 
     public function __construct(
-        ?string $username,
+        ?string $userIdentifier,
         ?string $organizationName,
         ?\DateTimeInterface $startAt
     ) {
-        $this->username = $username;
+        $this->userIdentifier = $userIdentifier;
         $this->organizationName = $organizationName;
         $this->startAt = $startAt;
     }
 
     public function setUsername(?string $username): void
     {
-        $this->username = $username;
+        $this->setUserIdentifier($username);
     }
 
     public function getUsername(): ?string
     {
-        return $this->username;
+        return $this->getUserIdentifier();
+    }
+
+    public function setUserIdentifier(?string $userIdentifier): void
+    {
+        $this->userIdentifier = $userIdentifier;
+    }
+
+    public function getUserIdentifier(): ?string
+    {
+        return $this->userIdentifier;
     }
 
     public function setOrganizationName(?string $organizationName): void
