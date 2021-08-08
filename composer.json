@@ -13,8 +13,8 @@
     "prefer-stable": true,
     "require": {
         "klipper/resource": "^2.0.0",
-        "symfony/event-dispatcher": "^5.2.0",
-        "symfony/lock": "^5.2.0"
+        "symfony/event-dispatcher": "^5.3.0",
+        "symfony/lock": "^5.3.0"
     },
     "require-dev": {
         "klipper/security-extra": "^2.0.0",
