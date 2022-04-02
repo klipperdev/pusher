@@ -93,6 +93,7 @@ class PusherSecuritySubscriber implements EventSubscriberInterface
     private function authUser(string $username): void
     {
         $repo = $this->em->getRepository(UserInterface::class);
+
         /** @var null|UserInterface $user */
         $user = $repo->findOneBy(['username' => $username]);
 
